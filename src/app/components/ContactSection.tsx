@@ -13,21 +13,38 @@ const EMAIL = 'macauleyprince.dev@gmail.com';
 export default function ContactSection() {
   const [copied, setCopied] = useState(false);
 
-  const handleCopy = async () => {
+  const handleCopy = () => {
     try {
-      await navigator.clipboard.writeText(EMAIL);
+      if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard?.writeText) {
+        navigator.clipboard?.writeText(EMAIL)?.then(() => {
+          setCopied(true);
+          setTimeout(() => setCopied(false), 2500);
+        })?.catch(() => {
+          fallbackCopy();
+        });
+      } else {
+        fallbackCopy();
+      }
+    } catch {
+      fallbackCopy();
+    }
+  };
+
+  const fallbackCopy = () => {
+    try {
+      const el = document.createElement('textarea');
+      el.value = EMAIL;
+      el.style.position = 'fixed';
+      el.style.opacity = '0';
+      document.body?.appendChild(el);
+      el?.focus();
+      el?.select();
+      document.execCommand('copy');
+      document.body?.removeChild(el);
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
     } catch {
-      // fallback
-      const el = document.createElement('textarea');
-      el.value = EMAIL;
-      document.body.appendChild(el);
-      el.select();
-      document.execCommand('copy');
-      document.body.removeChild(el);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2500);
+      // silently fail — do not crash
     }
   };
 
@@ -71,6 +88,7 @@ export default function ContactSection() {
                 {EMAIL}
               </span>
               <button
+                type="button"
                 onClick={handleCopy}
                 aria-label="Copy email address"
                 className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 flex-shrink-0 border"
@@ -106,7 +124,7 @@ export default function ContactSection() {
           {/* Social cards — 1 col stacked */}
           <div className="flex flex-col gap-4">
             <a
-              href="https://github.com/macauleyprince"
+              href="https://github.com/Prince-406"
               target="_blank"
               rel="noopener noreferrer"
               className="glass-card rounded-2xl border border-border p-5 flex items-center gap-4 card-hover group transition-all duration-200 hover:border-primary/40"
@@ -119,14 +137,14 @@ export default function ContactSection() {
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-semibold text-foreground">GitHub</p>
                 <p className="font-mono text-xs text-muted-foreground truncate">
-                  @macauleyprince
+                  @Prince-406
                 </p>
               </div>
               <ArrowUpRightIcon className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
             </a>
 
             <a
-              href="https://linkedin.com/in/macauleyprince"
+              href="https://www.linkedin.com/in/prince-macauley-7630632a9"
               target="_blank"
               rel="noopener noreferrer"
               className="glass-card rounded-2xl border border-border p-5 flex items-center gap-4 card-hover group transition-all duration-200 hover:border-accent/40"
