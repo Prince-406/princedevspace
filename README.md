@@ -30,7 +30,7 @@ To run this portfolio locally on your machine:
 
 ```bash
 # 1. Clone the repository
-git clone [https://github.com/YOUR_GITHUB_USERNAME/prince-dev-space.git](https://github.com/YOUR_GITHUB_USERNAME/prince-dev-space.git)
+git clone https://github.com/Prince-406/princedevspace.git
 
 # 2. Navigate into the project directory
 cd prince-dev-space
