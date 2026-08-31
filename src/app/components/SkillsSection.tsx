@@ -2,25 +2,6 @@
 
 import React, { useEffect, useRef } from 'react';
 import { skillCategories } from '@/data/skills';
-import {
-  CodeBracketIcon,
-  PaintBrushIcon,
-  GlobeAltIcon,
-  WrenchScrewdriverIcon,
-} from '@heroicons/react/24/outline';
-
-const iconMap: Record<string, React.ReactNode> = {
-  CodeBracketIcon: <CodeBracketIcon className="w-5 h-5" />,
-  PaintBrushIcon: <PaintBrushIcon className="w-5 h-5" />,
-  GlobeAltIcon: <GlobeAltIcon className="w-5 h-5" />,
-  WrenchScrewdriverIcon: <WrenchScrewdriverIcon className="w-5 h-5" />,
-};
-
-const levelColors: Record<string, string> = {
-  Advanced: 'bg-emerald-400/10 text-emerald-400 border-emerald-400/20',
-  Intermediate: 'bg-amber-400/10 text-amber-400 border-amber-400/20',
-  Learning: 'bg-blue-400/10 text-blue-400 border-blue-400/20',
-};
 
 export default function SkillsSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -47,55 +28,53 @@ export default function SkillsSection() {
     return () => observer.disconnect();
   }, []);
 
+  const levelDot: Record<string, string> = {
+    Advanced: 'bg-[#CBFF00]',
+    Intermediate: 'bg-white',
+    Learning: 'bg-[#888888]',
+  };
+
   return (
-    <section id="skills" ref={sectionRef} className="section-padding px-6 relative overflow-hidden">
-      <div className="absolute bottom-0 left-0 w-80 h-80 blob-accent opacity-40 pointer-events-none" />
+    <section id="skills" ref={sectionRef} className="bg-[#0A0A0A] border-t border-[#2A2A2A]">
+      {/* Section header */}
+      <div className="max-w-7xl mx-auto px-6 pt-16 pb-10">
+        <p className="section-number mb-4">03 // Capabilities</p>
+        <h2 className="font-sans font-black text-white leading-none"
+          style={{ fontSize: 'clamp(2.5rem, 7vw, 5rem)' }}>
+          SKILLS.
+        </h2>
+        <p className="font-mono text-xs tracking-widest uppercase text-[#888888] mt-3">
+          The tools and technologies I use to build production-quality web applications.
+        </p>
+      </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header */}
-        <div className="text-center mb-14">
-          <p className="font-mono text-sm text-primary tracking-widest uppercase mb-2">
-            // technical skills
-          </p>
-          <h2 className="text-4xl font-bold text-foreground tracking-tight">
-            Tech Stack & Capabilities
-          </h2>
-          <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
-            The tools and technologies I use to build production-quality web applications.
-          </p>
-        </div>
-
-        {/* Skills Grid — 4 equal categories */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Skills Grid */}
+      <div className="max-w-7xl mx-auto px-6 pb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border border-[#2A2A2A]">
           {skillCategories.map((category, catIndex) => (
             <div
               key={category.id}
-              className="skill-card opacity-0-init glass-card rounded-2xl border border-border p-6 flex flex-col gap-5 card-hover"
+              className={`skill-card opacity-0-init flex flex-col border-r border-[#2A2A2A] last:border-r-0 ${catIndex >= 2 ? 'border-t border-[#2A2A2A] sm:border-t-0 lg:border-t-0' : ''}`}
               style={{ transitionDelay: `${catIndex * 80}ms` }}
             >
               {/* Category header */}
-              <div className="flex items-center gap-3">
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                  style={{ background: `${category.color}15`, color: category.color, border: `1px solid ${category.color}30` }}
-                >
-                  {iconMap[category.iconName]}
-                </div>
-                <h3 className="text-sm font-semibold text-foreground leading-tight">
+              <div className="px-6 py-5 border-b border-[#2A2A2A]">
+                <h3 className="font-mono text-xs font-bold tracking-widest uppercase text-[#CBFF00]">
                   {category.label}
                 </h3>
               </div>
 
               {/* Skills list */}
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col divide-y divide-[#1A1A1A]">
                 {category.skills.map((skill) => (
-                  <div key={skill.name} className="flex items-center justify-between gap-2">
-                    <span className="text-sm text-foreground font-medium">{skill.name}</span>
-                    <span
-                      className={`font-mono text-xs px-2 py-0.5 rounded-md border flex-shrink-0 ${levelColors[skill.level]}`}
-                    >
-                      {skill.level}
-                    </span>
+                  <div key={skill.name} className="flex items-center justify-between gap-2 px-6 py-4 hover:bg-[#111111] transition-colors duration-150">
+                    <span className="text-sm text-white font-medium">{skill.name}</span>
+                    <div className="flex items-center gap-1.5 flex-shrink-0">
+                      <span className={`w-1.5 h-1.5 rounded-full ${levelDot[skill.level]}`} />
+                      <span className="font-mono text-[10px] tracking-wider uppercase text-[#888888]">
+                        {skill.level}
+                      </span>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -103,12 +82,19 @@ export default function SkillsSection() {
           ))}
         </div>
 
-        {/* Bottom note */}
-        <div className="mt-10 text-center">
-          <p className="font-mono text-sm text-muted-foreground">
-            <span className="text-accent">// </span>
-            Always learning — currently exploring Framer Motion and tRPC
-          </p>
+        {/* Legend */}
+        <div className="flex items-center gap-6 mt-6 pt-6 border-t border-[#2A2A2A]">
+          <span className="font-mono text-[10px] tracking-widest uppercase text-[#888888]">Legend:</span>
+          {[
+            { label: 'Advanced', color: 'bg-[#CBFF00]' },
+            { label: 'Intermediate', color: 'bg-white' },
+            { label: 'Learning', color: 'bg-[#888888]' },
+          ].map((item) => (
+            <div key={item.label} className="flex items-center gap-2">
+              <span className={`w-1.5 h-1.5 rounded-full ${item.color}`} />
+              <span className="font-mono text-[10px] tracking-wider uppercase text-[#888888]">{item.label}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -35,7 +35,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`dark ${plusJakartaSans.variable} ${jetbrainsMono.variable}`}>
       <body className={plusJakartaSans.className}>
         {children}
 

@@ -11,7 +11,7 @@ import ContactSection from '@/app/components/ContactSection';
 export default function HomePage() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen flex flex-col bg-background text-foreground">
+      <div className="min-h-screen flex flex-col bg-[#0A0A0A] text-white">
         <Navbar />
         <main className="flex-1">
           <HeroSection />
