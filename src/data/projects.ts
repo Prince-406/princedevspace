@@ -17,7 +17,7 @@ export const projects: Project[] = [
   'Dark/light mode with smooth transitions',
   'Fully responsive — works on mobile and desktop'],
 
-  image: "https://unsplash.com/photos/blue-sky-and-white-clouds-over-lake-bR_-gllg7Bs",
+  image: "https://img.rocket.new/generatedImages/rocket_gen_img_14cd9bc98-1788218830840.png",
   liveUrl: 'https://skypulse-sage.vercel.app',
   sourceUrl: 'https://github.com/Prince-406/skypulse.git',
   color: '#06B6D4',
@@ -39,7 +39,7 @@ export const projects: Project[] = [
   'Smooth page transitions with Framer Motion',
   'Fully responsive with mobile-first layouts'],
 
-  image: "https://unsplash.com/photos/people-inside-eatery-WWST6E8LxeE",
+  image: "https://img.rocket.new/generatedImages/rocket_gen_img_1d3e52823-1788218831472.png",
   liveUrl: 'https://dine-ashen.vercel.app',
   sourceUrl: 'https://github.com/Prince-406/dine.git',
   color: '#F59E0B',
@@ -61,7 +61,7 @@ export const projects: Project[] = [
   'Quantity selector with increment/decrement',
   'WCAG-compliant accessible markup throughout'],
 
-  image: "https://unsplash.com/photos/a-bunch-of-shoes-that-are-on-a-shelf-6vhG9RL28fQ",
+  image: "https://img.rocket.new/generatedImages/rocket_gen_img_1d552d276-1767028341186.png",
   liveUrl: 'https://sneakers-7035.vercel.app',
   sourceUrl: 'https://github.com/Prince-406/sneakers_7035.git',
   color: '#8B5CF6',

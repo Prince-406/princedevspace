@@ -136,7 +136,7 @@ export default function HeroSection() {
               )}
             </div>
             <a
-              href="/macauley_prince_cv.pdf"
+              href="/Professional_cv-1788217879487.pdf"
               download="Macauley_Prince_CV.pdf"
               className="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#888888] hover:text-[#CBFF00] transition-colors duration-200"
             >
