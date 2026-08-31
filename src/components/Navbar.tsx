@@ -1,11 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import AppLogo from '@/components/ui/AppLogo';
 import { useTheme } from '@/context/ThemeContext';
 import {
-  SunIcon,
-  MoonIcon,
   Bars3Icon,
   XMarkIcon,
   ArrowDownTrayIcon,
@@ -34,30 +31,34 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         scrolled
-          ? 'py-3 glass-card border-b border-border/50 shadow-lg'
-          : 'py-5 bg-transparent'
+          ? 'bg-[#0A0A0A] border-b border-[#2A2A2A]'
+          : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2 group">
-          <AppLogo size={32} />
-          <span className="font-mono text-sm font-semibold text-foreground tracking-tight hidden sm:block">
-            <span className="text-primary">prince</span>
-            <span className="text-muted-foreground">.</span>
-            <span className="text-accent">dev</span>
+          {/* X mark logo */}
+          <div className="w-7 h-7 relative flex items-center justify-center">
+            <svg viewBox="0 0 28 28" fill="none" className="w-7 h-7">
+              <line x1="4" y1="4" x2="24" y2="24" stroke="#CBFF00" strokeWidth="2.5" strokeLinecap="square"/>
+              <line x1="24" y1="4" x2="4" y2="24" stroke="#CBFF00" strokeWidth="2.5" strokeLinecap="square"/>
+            </svg>
+          </div>
+          <span className="font-mono text-sm font-semibold text-white tracking-tight hidden sm:block">
+            prince<span className="text-[#CBFF00]">.dev</span>
           </span>
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden md:flex items-center gap-8">
           {navLinks?.map((link) => (
             <a
               key={link?.label}
               href={link?.href}
-              className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground rounded-lg hover:bg-muted/50 transition-all duration-200"
+              className="font-mono text-xs tracking-widest uppercase text-[#888888] hover:text-white transition-colors duration-200"
             >
               {link?.label}
             </a>
@@ -65,31 +66,27 @@ export default function Navbar() {
         </nav>
 
         {/* Right Actions */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <button
             onClick={toggleTheme}
             aria-label="Toggle theme"
-            className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all duration-200"
+            className="font-mono text-xs text-[#888888] hover:text-[#CBFF00] transition-colors duration-200 hidden sm:block"
           >
-            {theme === 'dark' ? (
-              <SunIcon className="w-5 h-5" />
-            ) : (
-              <MoonIcon className="w-5 h-5" />
-            )}
+            {theme === 'dark' ? '[ LIGHT ]' : '[ DARK ]'}
           </button>
 
           <a
             href="/resume.pdf"
             download
-            className="hidden sm:flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-lg bg-primary text-primary-foreground hover:opacity-90 transition-all duration-200 shadow-sm"
+            className="hidden sm:flex items-center gap-2 px-4 py-2 text-xs font-mono font-bold tracking-widest uppercase bg-[#CBFF00] text-[#0A0A0A] hover:bg-white transition-colors duration-200"
           >
-            <ArrowDownTrayIcon className="w-4 h-4" />
+            <ArrowDownTrayIcon className="w-3.5 h-3.5" />
             Resume
           </a>
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all duration-200"
+            className="md:hidden p-2 text-[#888888] hover:text-white transition-colors duration-200"
             aria-label="Toggle menu"
           >
             {menuOpen ? <XMarkIcon className="w-5 h-5" /> : <Bars3Icon className="w-5 h-5" />}
@@ -103,13 +100,13 @@ export default function Navbar() {
           menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="px-6 pb-4 pt-2 flex flex-col gap-1 border-t border-border/30 bg-card/95 backdrop-blur-xl">
+        <div className="px-6 pb-6 pt-4 flex flex-col gap-1 border-t border-[#2A2A2A] bg-[#0A0A0A]">
           {navLinks?.map((link) => (
             <a
               key={link?.label}
               href={link?.href}
               onClick={handleNavClick}
-              className="px-4 py-3 text-base font-medium text-muted-foreground hover:text-foreground rounded-lg hover:bg-muted/50 transition-all duration-200"
+              className="px-0 py-3 font-mono text-xs tracking-widest uppercase text-[#888888] hover:text-white border-b border-[#1A1A1A] transition-colors duration-200"
             >
               {link?.label}
             </a>
@@ -117,9 +114,9 @@ export default function Navbar() {
           <a
             href="/resume.pdf"
             download
-            className="flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold rounded-lg bg-primary text-primary-foreground hover:opacity-90 transition-all duration-200 mt-2"
+            className="flex items-center justify-center gap-2 px-4 py-3 text-xs font-mono font-bold tracking-widest uppercase bg-[#CBFF00] text-[#0A0A0A] hover:bg-white transition-colors duration-200 mt-4"
           >
-            <ArrowDownTrayIcon className="w-4 h-4" />
+            <ArrowDownTrayIcon className="w-3.5 h-3.5" />
             Download Resume
           </a>
         </div>
