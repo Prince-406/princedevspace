@@ -6,9 +6,28 @@ import {
   CpuChipIcon,
   GlobeAltIcon,
   CommandLineIcon,
+  BriefcaseIcon,
 } from '@heroicons/react/24/outline';
 
 const milestones = [
+  {
+    id: 'education',
+    phase: 'Foundation',
+    title: 'Education & Technical Training',
+    description:
+      'Completed Senior Secondary Certificate Examination (SSCE) at Inspiration Academy, followed by vocational Electrical Technician training at Henry Karll Technical Centre — building a strong foundation in structured problem-solving and technical discipline.',
+    tags: ['SSCE', 'Inspiration Academy', 'Henry Karll Technical Centre', 'Electrical Technician'],
+    icon: <AcademicCapIcon className="w-5 h-5" />,
+  },
+  {
+    id: 'alx',
+    phase: 'Professional Training',
+    title: 'ALX Professional Foundations',
+    description:
+      'Completed intensive professional foundations training at ALX, focused on career readiness, effective communication, and structured problem-solving. Applied agile project workflows and collaboration practices directly to frontend development projects.',
+    tags: ['ALX', 'Career Readiness', 'Agile Workflows', 'Communication', 'Problem-Solving'],
+    icon: <BriefcaseIcon className="w-5 h-5" />,
+  },
   {
     id: 'foundations',
     phase: 'Phase 01',
@@ -23,8 +42,8 @@ const milestones = [
     phase: 'Phase 02',
     title: 'React & Next.js Ecosystem',
     description:
-      'Built responsive, component-driven interfaces using React, Next.js (App Router), TypeScript, and Tailwind CSS. Learned to think in components, manage props and state, and structure real applications.',
-    tags: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'App Router'],
+      'Built responsive, component-driven interfaces using React, Next.js (App Router), TypeScript, and Tailwind CSS. Learned to think in components, manage props and state, and structure real applications with clean component architecture.',
+    tags: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Component Architecture'],
     icon: <CpuChipIcon className="w-5 h-5" />,
   },
   {

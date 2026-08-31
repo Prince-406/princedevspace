@@ -6,11 +6,11 @@ export const projects: Project[] = [
   title: 'SkyPulse Weather App',
   tagline: 'Real-time weather at a glance — anywhere on Earth.',
   description:
-  'A full-featured weather application that uses the Open-Meteo REST API and the browser Geolocation API to deliver real-time forecasts. Features include a 7-day forecast panel, hourly breakdowns, wind speed/UV index cards, and a voice-search capability powered by the Web Speech API. Deployed on Vercel with zero config.',
+  'Engineered a real-time weather application integrating the Open-Meteo REST API and the native browser Geolocation API to deliver live forecasts. Features a 7-day forecast panel, hourly breakdowns, wind speed/UV index cards, and voice-search powered by the Web Speech API. Built with React, TypeScript, and Tailwind CSS — deployed on Vercel.',
   category: 'Full Web Apps',
-  tech: ['React', 'TypeScript', 'Tailwind CSS', 'Open-Meteo API', 'Geolocation API', 'Web Speech API', 'Vite'],
+  tech: ['React', 'TypeScript', 'Tailwind CSS', 'Open-Meteo REST API', 'Geolocation API', 'Web Speech API', 'Vite'],
   features: [
-  'Auto-detects user location via Geolocation API',
+  'Auto-detects user location via native Geolocation API',
   'City search with Web Speech API voice input',
   '7-day forecast + hourly temperature chart',
   'Wind speed, UV index, and humidity cards',
@@ -28,7 +28,7 @@ export const projects: Project[] = [
   title: 'Dine Luxury Restaurant',
   tagline: 'A Michelin-grade dining experience, online.',
   description:
-  'A premium restaurant website built to translate a high-fidelity Figma design spec into pixel-perfect, responsive code. Showcases a full menu system with category filters, an interactive reservation form, a parallax hero section, and smooth scroll animations. Demonstrates design-to-code precision and CSS layout mastery.',
+  'Built a high-end restaurant interface using Next.js App Router and Framer Motion, with a strong focus on responsive mobile layouts and smooth page transitions. Translated a high-fidelity Figma design spec into pixel-perfect, production-ready code — showcasing design-to-code precision and CSS layout mastery.',
   category: 'Full Web Apps',
   tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'CSS Modules', 'Figma'],
   features: [
@@ -36,8 +36,8 @@ export const projects: Project[] = [
   'Interactive menu with category filter tabs',
   'Parallax hero with cinematic food photography',
   'Reservation form with client-side validation',
-  'Smooth scroll reveal animations throughout',
-  'Fully responsive across all breakpoints'],
+  'Smooth page transitions with Framer Motion',
+  'Fully responsive with mobile-first layouts'],
 
   image: "https://img.rocket.new/generatedImages/rocket_gen_img_1ecd2db33-1788094695278.png",
   liveUrl: 'https://dine-ashen.vercel.app',
@@ -50,15 +50,15 @@ export const projects: Project[] = [
   title: 'Sneakers E-Commerce',
   tagline: 'A product detail page that actually converts.',
   description:
-  'A high-fidelity e-commerce product detail page for a premium sneaker brand. Features an interactive image gallery with thumbnail navigation, quantity selector, add-to-cart logic with a live cart counter, and a fully accessible modal lightbox. Built to demonstrate component-driven React architecture and state management patterns.',
+  'Developed a high-converting e-commerce product detail page with dynamic cart state management using React Context API. Implemented interactive UI components including product image carousels, a lightbox gallery, and a responsive navigation drawer — demonstrating component-driven React architecture and state management patterns.',
   category: 'E-commerce / UI',
   tech: ['React', 'TypeScript', 'Tailwind CSS', 'Context API', 'CSS Grid', 'Figma'],
   features: [
-  'Interactive image gallery with thumbnail switcher',
+  'Dynamic cart management with React Context API',
+  'Interactive product image carousel',
   'Lightbox modal for full-screen product view',
-  'Add-to-cart with live cart counter in navbar',
+  'Responsive navigation drawer',
   'Quantity selector with increment/decrement',
-  'Context API for global cart state management',
   'WCAG-compliant accessible markup throughout'],
 
   image: "https://img.rocket.new/generatedImages/rocket_gen_img_1d552d276-1767028341186.png",

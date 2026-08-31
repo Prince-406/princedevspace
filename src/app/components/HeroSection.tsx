@@ -93,9 +93,9 @@ export default function HeroSection() {
                 Crafting interfaces that feel inevitable — not designed.
               </p>
               <p className="text-[#888888] text-sm leading-relaxed">
-                I build fast, accessible, and visually polished web applications
-                using React and Next.js. Focused on shipping real products that
-                demonstrate clean architecture and strong UI fundamentals.
+                Frontend Developer specializing in React, Next.js, TypeScript, and Tailwind CSS.
+                I focus on responsive design, clean component architecture, REST API integration,
+                and translating Figma designs into pixel-perfect, production-ready web applications.
               </p>
             </div>
 
