@@ -18,8 +18,8 @@ export const projects: Project[] = [
   'Fully responsive — works on mobile and desktop'],
 
   image: "https://img.rocket.new/generatedImages/rocket_gen_img_11696c0f0-1788094694433.png",
-  liveUrl: 'https://skypulse-weather.vercel.app',
-  sourceUrl: 'https://github.com/macauleyprince/skypulse-weather',
+  liveUrl: 'https://skypulse-sage.vercel.app',
+  sourceUrl: 'https://github.com/Prince-406/skypulse.git',
   color: '#06B6D4',
   accentColor: '#0E7490'
 },
@@ -40,8 +40,8 @@ export const projects: Project[] = [
   'Fully responsive across all breakpoints'],
 
   image: "https://img.rocket.new/generatedImages/rocket_gen_img_1ecd2db33-1788094695278.png",
-  liveUrl: 'https://dine-luxury.vercel.app',
-  sourceUrl: 'https://github.com/macauleyprince/dine-luxury',
+  liveUrl: 'https://dine-ashen.vercel.app',
+  sourceUrl: 'https://github.com/Prince-406/dine.git',
   color: '#F59E0B',
   accentColor: '#D97706'
 },
@@ -62,8 +62,8 @@ export const projects: Project[] = [
   'WCAG-compliant accessible markup throughout'],
 
   image: "https://img.rocket.new/generatedImages/rocket_gen_img_1d552d276-1767028341186.png",
-  liveUrl: 'https://sneakers-ecom.vercel.app',
-  sourceUrl: 'https://github.com/macauleyprince/sneakers-ecom',
+  liveUrl: 'https://sneakers-7035.vercel.app',
+  sourceUrl: 'https://github.com/Prince-406/sneakers_7035.git',
   color: '#8B5CF6',
   accentColor: '#7C3AED'
 }];
