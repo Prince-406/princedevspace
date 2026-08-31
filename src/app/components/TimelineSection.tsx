@@ -11,15 +11,6 @@ import {
 
 const milestones = [
   {
-    id: 'education',
-    phase: 'Foundation',
-    title: 'Education & Technical Training',
-    description:
-      'Completed Senior Secondary Certificate Examination (SSCE) at Inspiration Academy, followed by vocational Electrical Technician training at Henry Karll Technical Centre — building a strong foundation in structured problem-solving and technical discipline.',
-    tags: ['SSCE', 'Inspiration Academy', 'Henry Karll Technical Centre', 'Electrical Technician'],
-    icon: <AcademicCapIcon className="w-5 h-5" />,
-  },
-  {
     id: 'alx',
     phase: 'Professional Training',
     title: 'ALX Professional Foundations',
