@@ -76,7 +76,7 @@ export default function Navbar() {
           </button>
 
           <a
-            href="/resume.pdf"
+            href="/Professional_cv.pdf"
             download
             className="hidden sm:flex items-center gap-2 px-4 py-2 text-xs font-mono font-bold tracking-widest uppercase bg-[#CBFF00] text-[#0A0A0A] hover:bg-white transition-colors duration-200"
           >
