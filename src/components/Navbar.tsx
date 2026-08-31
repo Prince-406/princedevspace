@@ -112,7 +112,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="/resume.pdf"
+            href="/Professional_cv.pdf"
             download
             className="flex items-center justify-center gap-2 px-4 py-3 text-xs font-mono font-bold tracking-widest uppercase bg-[#CBFF00] text-[#0A0A0A] hover:bg-white transition-colors duration-200 mt-4"
           >
