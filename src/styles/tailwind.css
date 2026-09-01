@@ -289,6 +289,80 @@
     border-color: var(--primary);
     color: var(--primary);
   }
+
+  /* Theme section background */
+  .theme-section {
+    background-color: var(--background);
+  }
+
+  /* Modal buttons */
+  .modal-btn-primary {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  .modal-btn-primary:hover {
+    background-color: var(--foreground);
+    color: var(--background);
+  }
+
+  .modal-btn-outline {
+    color: var(--foreground);
+  }
+
+  .modal-btn-outline:hover {
+    border-color: var(--primary) !important;
+    color: var(--primary);
+  }
+
+  /* Modal close button */
+  .modal-close-btn:hover {
+    background-color: var(--primary) !important;
+    color: var(--primary-foreground) !important;
+  }
+
+  /* Social card hover */
+  .social-card:hover {
+    background-color: var(--muted);
+  }
+
+  /* Availability badge */
+  .availability-badge {
+    border-color: color-mix(in srgb, var(--primary) 30%, transparent);
+    background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+  }
+
+  /* Theme toggle button */
+  .theme-toggle-btn {
+    color: var(--muted-foreground);
+    border-color: var(--border);
+  }
+
+  .theme-toggle-btn:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+  }
+
+  /* Project card hover */
+  .project-card:hover .foreground-text {
+    color: var(--primary);
+  }
+
+  /* SkillsSection row hover */
+  .skill-row:hover {
+    background-color: var(--muted);
+  }
+
+  /* Timeline row hover */
+  .timeline-row:hover {
+    background-color: var(--muted);
+  }
+
+  /* Timeline tag hover */
+  .timeline-tag:hover {
+    border-color: var(--primary) !important;
+    color: var(--primary) !important;
+  }
 }
 
 @keyframes float {

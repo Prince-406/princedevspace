@@ -83,15 +83,15 @@ export default function TimelineSection() {
   }, []);
 
   return (
-    <section id="journey" ref={sectionRef} className="border-t" style={{ backgroundColor: 'var(--background)', borderColor: 'var(--border)' }}>
+    <section id="journey" ref={sectionRef} className="border-t theme-section" style={{ borderColor: 'var(--border)' }}>
       {/* Section header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-8 sm:pb-10">
         <p className="section-number mb-4">04 // Learning Journey</p>
-        <h2 className="font-sans font-black leading-none"
-          style={{ fontSize: 'clamp(2rem, 7vw, 5rem)', color: 'var(--foreground)' }}>
+        <h2 className="font-sans font-black leading-none foreground-text"
+          style={{ fontSize: 'clamp(2rem, 7vw, 5rem)' }}>
           HOW I GOT HERE.
         </h2>
-        <p className="font-mono text-xs tracking-widest uppercase mt-3 max-w-xl" style={{ color: 'var(--muted-foreground)' }}>
+        <p className="font-mono text-xs tracking-widest uppercase mt-3 max-w-xl muted-text">
           A self-directed path from zero to shipping real products — built through deliberate practice and project execution.
         </p>
       </div>
@@ -102,10 +102,8 @@ export default function TimelineSection() {
           {milestones?.map((milestone, index) => (
             <div
               key={milestone?.id}
-              className="timeline-item opacity-0-init grid grid-cols-1 md:grid-cols-[140px_1fr] lg:grid-cols-[200px_1fr] border-b last:border-b-0 transition-colors duration-200"
+              className="timeline-item opacity-0-init grid grid-cols-1 md:grid-cols-[140px_1fr] lg:grid-cols-[200px_1fr] border-b last:border-b-0 transition-colors duration-200 timeline-row"
               style={{ borderColor: 'var(--border)', transitionDelay: `${index * 120}ms` }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--muted)')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
             >
               {/* Phase label column */}
               <div
@@ -113,10 +111,10 @@ export default function TimelineSection() {
                 style={{ borderColor: 'var(--border)' }}
               >
                 <div>
-                  <p className="font-mono text-xs font-bold tracking-widest uppercase mb-1 md:mb-2" style={{ color: 'var(--primary)' }}>
+                  <p className="font-mono text-xs font-bold tracking-widest uppercase mb-1 md:mb-2 primary-text">
                     {milestone?.phase}
                   </p>
-                  <div style={{ color: 'var(--muted-foreground)' }}>
+                  <div className="muted-text">
                     {milestone?.icon}
                   </div>
                 </div>
@@ -125,26 +123,18 @@ export default function TimelineSection() {
 
               {/* Content column */}
               <div className="px-4 sm:px-6 py-5 md:py-6">
-                <h3 className="font-sans font-bold text-base sm:text-lg leading-tight mb-3" style={{ color: 'var(--foreground)' }}>
+                <h3 className="font-sans font-bold text-base sm:text-lg leading-tight mb-3 foreground-text">
                   {milestone?.title}
                 </h3>
-                <p className="text-sm leading-relaxed mb-4 sm:mb-5" style={{ color: 'var(--muted-foreground)' }}>
+                <p className="text-sm leading-relaxed mb-4 sm:mb-5 muted-text">
                   {milestone?.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {milestone?.tags?.map((tag) => (
                     <span
                       key={tag}
-                      className="font-mono text-[10px] px-2.5 py-1 border tracking-wider uppercase transition-colors duration-200"
-                      style={{ borderColor: 'var(--border)', color: 'var(--muted-foreground)' }}
-                      onMouseEnter={(e) => {
-                        (e.currentTarget as HTMLSpanElement).style.borderColor = 'var(--primary)';
-                        (e.currentTarget as HTMLSpanElement).style.color = 'var(--primary)';
-                      }}
-                      onMouseLeave={(e) => {
-                        (e.currentTarget as HTMLSpanElement).style.borderColor = 'var(--border)';
-                        (e.currentTarget as HTMLSpanElement).style.color = 'var(--muted-foreground)';
-                      }}
+                      className="font-mono text-[10px] px-2.5 py-1 border tracking-wider uppercase transition-colors duration-200 muted-text timeline-tag"
+                      style={{ borderColor: 'var(--border)' }}
                     >
                       {tag}
                     </span>
