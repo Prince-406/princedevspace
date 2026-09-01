@@ -28,22 +28,22 @@ export default function SkillsSection() {
     return () => observer.disconnect();
   }, []);
 
-  const levelDot: Record<string, string> = {
+  const levelDotColor: Record<string, string> = {
     Advanced: 'var(--primary)',
     Intermediate: 'var(--foreground)',
     Learning: 'var(--muted-foreground)',
   };
 
   return (
-    <section id="skills" ref={sectionRef} className="border-t" style={{ backgroundColor: 'var(--background)', borderColor: 'var(--border)' }}>
+    <section id="skills" ref={sectionRef} className="border-t theme-section" style={{ borderColor: 'var(--border)' }}>
       {/* Section header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-8 sm:pb-10">
         <p className="section-number mb-4">03 // Capabilities</p>
-        <h2 className="font-sans font-black leading-none"
-          style={{ fontSize: 'clamp(2.2rem, 7vw, 5rem)', color: 'var(--foreground)' }}>
+        <h2 className="font-sans font-black leading-none foreground-text"
+          style={{ fontSize: 'clamp(2.2rem, 7vw, 5rem)' }}>
           SKILLS.
         </h2>
-        <p className="font-mono text-xs tracking-widest uppercase mt-3" style={{ color: 'var(--muted-foreground)' }}>
+        <p className="font-mono text-xs tracking-widest uppercase mt-3 muted-text">
           The tools and technologies I use to build production-quality web applications.
         </p>
       </div>
@@ -65,7 +65,7 @@ export default function SkillsSection() {
             >
               {/* Category header */}
               <div className="px-5 sm:px-6 py-4 sm:py-5 border-b" style={{ borderColor: 'var(--border)' }}>
-                <h3 className="font-mono text-xs font-bold tracking-widest uppercase" style={{ color: 'var(--primary)' }}>
+                <h3 className="font-mono text-xs font-bold tracking-widest uppercase primary-text">
                   {category.label}
                 </h3>
               </div>
@@ -75,15 +75,12 @@ export default function SkillsSection() {
                 {category.skills.map((skill) => (
                   <div
                     key={skill.name}
-                    className="flex items-center justify-between gap-2 px-5 sm:px-6 py-3 sm:py-4 transition-colors duration-150"
-                    style={{ borderColor: 'var(--muted)' }}
-                    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--muted)')}
-                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+                    className="flex items-center justify-between gap-2 px-5 sm:px-6 py-3 sm:py-4 transition-colors duration-150 skill-row"
                   >
-                    <span className="text-sm font-medium" style={{ color: 'var(--foreground)' }}>{skill.name}</span>
+                    <span className="text-sm font-medium foreground-text">{skill.name}</span>
                     <div className="flex items-center gap-1.5 flex-shrink-0">
-                      <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: levelDot[skill.level] }} />
-                      <span className="font-mono text-[10px] tracking-wider uppercase" style={{ color: 'var(--muted-foreground)' }}>
+                      <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: levelDotColor[skill.level] }} />
+                      <span className="font-mono text-[10px] tracking-wider uppercase muted-text">
                         {skill.level}
                       </span>
                     </div>
@@ -96,7 +93,7 @@ export default function SkillsSection() {
 
         {/* Legend */}
         <div className="flex flex-wrap items-center gap-4 sm:gap-6 mt-6 pt-6 border-t" style={{ borderColor: 'var(--border)' }}>
-          <span className="font-mono text-[10px] tracking-widest uppercase" style={{ color: 'var(--muted-foreground)' }}>Legend:</span>
+          <span className="font-mono text-[10px] tracking-widest uppercase muted-text">Legend:</span>
           {[
             { label: 'Advanced', colorKey: 'var(--primary)' },
             { label: 'Intermediate', colorKey: 'var(--foreground)' },
@@ -104,7 +101,7 @@ export default function SkillsSection() {
           ].map((item) => (
             <div key={item.label} className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: item.colorKey }} />
-              <span className="font-mono text-[10px] tracking-wider uppercase" style={{ color: 'var(--muted-foreground)' }}>{item.label}</span>
+              <span className="font-mono text-[10px] tracking-wider uppercase muted-text">{item.label}</span>
             </div>
           ))}
         </div>
