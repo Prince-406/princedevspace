@@ -48,48 +48,48 @@ export default function HeroSection() {
     >
       {/* Top ticker bar */}
       <div className="fixed top-16 left-0 right-0 z-40 border-b border-[#2A2A2A] bg-[#0A0A0A]">
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-9">
-          <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#888888]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-auto min-h-[36px] py-2 gap-3">
+          <span className="font-mono text-[9px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.2em] uppercase text-[#888888] leading-tight">
             Frontend Developer — Available for Remote Work
           </span>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-shrink-0">
             <span className="relative flex h-1.5 w-1.5">
               <span className="status-dot absolute inline-flex h-full w-full rounded-full bg-[#CBFF00] opacity-75" />
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#CBFF00]" />
             </span>
-            <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#CBFF00]">
+            <span className="font-mono text-[9px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.2em] uppercase text-[#CBFF00] whitespace-nowrap">
               Open to Opportunities
             </span>
           </div>
         </div>
       </div>
 
-      <div className="pt-[100px] min-h-screen grid grid-cols-1 lg:grid-cols-2">
+      <div className="pt-[108px] sm:pt-[100px] min-h-screen grid grid-cols-1 lg:grid-cols-2">
         {/* Left: Text content */}
-        <div className="flex flex-col justify-between px-6 lg:px-12 py-12 lg:py-16 border-r border-[#2A2A2A]">
+        <div className="flex flex-col justify-between px-4 sm:px-6 lg:px-12 py-8 sm:py-12 lg:py-16 lg:border-r lg:border-[#2A2A2A]">
           {/* Section label */}
           <div>
-            <p className="section-number mb-8">01 // Identity</p>
+            <p className="section-number mb-6 sm:mb-8">01 // Identity</p>
 
             {/* Big name headline */}
-            <div className="mb-8">
+            <div className="mb-6 sm:mb-8">
               <h1 className="font-sans font-black leading-[0.9] tracking-tight text-white"
-                style={{ fontSize: 'clamp(3.5rem, 10vw, 7rem)' }}>
+                style={{ fontSize: 'clamp(2.8rem, 10vw, 7rem)' }}>
                 MACAULEY
               </h1>
               <h1 className="font-sans font-black leading-[0.9] tracking-tight text-outline"
-                style={{ fontSize: 'clamp(3.5rem, 10vw, 7rem)' }}>
+                style={{ fontSize: 'clamp(2.8rem, 10vw, 7rem)' }}>
                 PRINCE
               </h1>
               <h1 className="font-sans font-black leading-[0.9] tracking-tight text-white"
-                style={{ fontSize: 'clamp(3.5rem, 10vw, 7rem)' }}>
+                style={{ fontSize: 'clamp(2.8rem, 10vw, 7rem)' }}>
                 BUILDS.
               </h1>
             </div>
 
             {/* Tagline */}
-            <div className="mb-8 max-w-md">
-              <p className="text-white font-bold text-lg leading-tight mb-3">
+            <div className="mb-6 sm:mb-8 max-w-md">
+              <p className="text-white font-bold text-base sm:text-lg leading-tight mb-3">
                 Crafting interfaces that feel inevitable — not designed.
               </p>
               <p className="text-[#888888] text-sm leading-relaxed">
@@ -100,10 +100,10 @@ export default function HeroSection() {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-wrap gap-3 mb-10">
+            <div className="flex flex-wrap gap-3 mb-8 sm:mb-10">
               <a
                 href="#projects"
-                className="flex items-center gap-2 px-6 py-3 text-xs font-mono font-bold tracking-widest uppercase bg-white text-[#0A0A0A] hover:bg-[#CBFF00] transition-colors duration-200"
+                className="flex items-center gap-2 px-5 sm:px-6 py-3 text-xs font-mono font-bold tracking-widest uppercase bg-white text-[#0A0A0A] hover:bg-[#CBFF00] transition-colors duration-200"
               >
                 View Projects
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -112,7 +112,7 @@ export default function HeroSection() {
               </a>
               <a
                 href="#contact"
-                className="flex items-center gap-2 px-6 py-3 text-xs font-mono font-bold tracking-widest uppercase border border-[#2A2A2A] text-white hover:border-[#CBFF00] hover:text-[#CBFF00] transition-colors duration-200"
+                className="flex items-center gap-2 px-5 sm:px-6 py-3 text-xs font-mono font-bold tracking-widest uppercase border border-[#2A2A2A] text-white hover:border-[#CBFF00] hover:text-[#CBFF00] transition-colors duration-200"
               >
                 Get In Touch
               </a>
@@ -121,7 +121,7 @@ export default function HeroSection() {
 
           {/* Bottom: social + resume */}
           <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-[#2A2A2A]">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3 sm:gap-4">
               {socialLinks?.map((social) =>
                 <a
                   key={social?.label}
@@ -167,7 +167,7 @@ export default function HeroSection() {
         </div>
 
         {/* Mobile profile image */}
-        <div className="lg:hidden relative h-72 mx-6 mb-8 overflow-hidden">
+        <div className="lg:hidden relative h-56 sm:h-72 mx-4 sm:mx-6 mb-6 sm:mb-8 overflow-hidden">
           <AppImage
             src="/assets/images/image_18b22e75-1788093940243.png"
             alt="Macauley Prince, Frontend Developer, professional headshot"
@@ -193,9 +193,9 @@ export default function HeroSection() {
           { value: '100%', label: 'Vercel Deployed' },
           { value: 'Remote', label: 'Work Ready' },
         ]?.map((stat) => (
-          <div key={stat?.label} className="px-6 py-6 text-center">
-            <p className="font-sans font-black text-3xl text-[#CBFF00] leading-none mb-1">{stat?.value}</p>
-            <p className="font-mono text-[10px] tracking-widest uppercase text-[#888888]">{stat?.label}</p>
+          <div key={stat?.label} className="px-3 sm:px-6 py-5 sm:py-6 text-center">
+            <p className="font-sans font-black text-2xl sm:text-3xl text-[#CBFF00] leading-none mb-1">{stat?.value}</p>
+            <p className="font-mono text-[9px] sm:text-[10px] tracking-widest uppercase text-[#888888] leading-tight">{stat?.label}</p>
           </div>
         ))}
       </div>

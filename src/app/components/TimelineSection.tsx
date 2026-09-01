@@ -85,7 +85,7 @@ export default function TimelineSection() {
   return (
     <section id="journey" ref={sectionRef} className="bg-[#0A0A0A] border-t border-[#2A2A2A]">
       {/* Section header */}
-      <div className="max-w-7xl mx-auto px-6 pt-16 pb-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-8 sm:pb-10">
         <p className="section-number mb-4">04 // Learning Journey</p>
         <h2 className="font-sans font-black text-white leading-none"
           style={{ fontSize: 'clamp(2.5rem, 7vw, 5rem)' }}>
@@ -97,18 +97,18 @@ export default function TimelineSection() {
       </div>
 
       {/* Timeline */}
-      <div className="max-w-7xl mx-auto px-6 pb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-12 sm:pb-16">
         <div className="flex flex-col gap-0 border border-[#2A2A2A]">
           {milestones?.map((milestone, index) => (
             <div
               key={milestone?.id}
-              className={`timeline-item opacity-0-init grid grid-cols-1 md:grid-cols-[200px_1fr] border-b border-[#2A2A2A] last:border-b-0 hover:bg-[#0F0F0F] transition-colors duration-200`}
+              className="timeline-item opacity-0-init grid grid-cols-1 md:grid-cols-[160px_1fr] lg:grid-cols-[200px_1fr] border-b border-[#2A2A2A] last:border-b-0 hover:bg-[#0F0F0F] transition-colors duration-200"
               style={{ transitionDelay: `${index * 120}ms` }}
             >
               {/* Phase label column */}
-              <div className="flex flex-col justify-between px-6 py-6 border-r border-[#2A2A2A] md:border-r">
+              <div className="flex flex-row md:flex-col justify-between md:justify-start px-4 sm:px-6 py-4 md:py-6 border-b border-[#2A2A2A] md:border-b-0 md:border-r md:border-[#2A2A2A] gap-3 md:gap-0">
                 <div>
-                  <p className="font-mono text-xs font-bold tracking-widest uppercase text-[#CBFF00] mb-2">
+                  <p className="font-mono text-xs font-bold tracking-widest uppercase text-[#CBFF00] mb-1 md:mb-2">
                     {milestone?.phase}
                   </p>
                   <div className="text-[#888888]">
@@ -119,11 +119,11 @@ export default function TimelineSection() {
               </div>
 
               {/* Content column */}
-              <div className="px-6 py-6">
-                <h3 className="font-sans font-bold text-white text-lg leading-tight mb-3">
+              <div className="px-4 sm:px-6 py-5 md:py-6">
+                <h3 className="font-sans font-bold text-white text-base sm:text-lg leading-tight mb-3">
                   {milestone?.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-[#888888] mb-5">
+                <p className="text-sm leading-relaxed text-[#888888] mb-4 sm:mb-5">
                   {milestone?.description}
                 </p>
                 <div className="flex flex-wrap gap-2">

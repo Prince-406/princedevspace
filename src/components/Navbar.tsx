@@ -37,9 +37,9 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2 group">
+        <a href="/" className="flex items-center gap-2 group flex-shrink-0">
           {/* X mark logo */}
           <div className="w-7 h-7 relative flex items-center justify-center">
             <svg viewBox="0 0 28 28" fill="none" className="w-7 h-7">
@@ -53,7 +53,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
           {navLinks?.map((link) => (
             <a
               key={link?.label}
@@ -66,7 +66,7 @@ export default function Navbar() {
         </nav>
 
         {/* Right Actions */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <button
             onClick={toggleTheme}
             aria-label="Toggle theme"
@@ -78,10 +78,11 @@ export default function Navbar() {
           <a
             href="/Professional_cv.pdf"
             download
-            className="hidden sm:flex items-center gap-2 px-4 py-2 text-xs font-mono font-bold tracking-widest uppercase bg-[#CBFF00] text-[#0A0A0A] hover:bg-white transition-colors duration-200"
+            className="hidden sm:flex items-center gap-2 px-3 lg:px-4 py-2 text-xs font-mono font-bold tracking-widest uppercase bg-[#CBFF00] text-[#0A0A0A] hover:bg-white transition-colors duration-200"
           >
             <ArrowDownTrayIcon className="w-3.5 h-3.5" />
-            Resume
+            <span className="hidden lg:inline">Resume</span>
+            <span className="lg:hidden">CV</span>
           </a>
 
           <button
@@ -100,7 +101,7 @@ export default function Navbar() {
           menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="px-6 pb-6 pt-4 flex flex-col gap-1 border-t border-[#2A2A2A] bg-[#0A0A0A]">
+        <div className="px-4 sm:px-6 pb-6 pt-4 flex flex-col gap-1 border-t border-[#2A2A2A] bg-[#0A0A0A]">
           {navLinks?.map((link) => (
             <a
               key={link?.label}
@@ -111,6 +112,13 @@ export default function Navbar() {
               {link?.label}
             </a>
           ))}
+          {/* Theme toggle in mobile menu */}
+          <button
+            onClick={() => { toggleTheme(); handleNavClick(); }}
+            className="py-3 font-mono text-xs tracking-widest uppercase text-[#888888] hover:text-[#CBFF00] border-b border-[#1A1A1A] transition-colors duration-200 text-left"
+          >
+            {theme === 'dark' ? '[ LIGHT MODE ]' : '[ DARK MODE ]'}
+          </button>
           <a
             href="/Professional_cv.pdf"
             download

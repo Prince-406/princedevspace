@@ -51,41 +51,41 @@ export default function ContactSection() {
   return (
     <section id="contact" className="bg-[#0A0A0A] border-t border-[#2A2A2A]">
       {/* Big CTA headline */}
-      <div className="max-w-7xl mx-auto px-6 pt-16 pb-12 border-b border-[#2A2A2A]">
-        <p className="section-number mb-6">05 // Get In Touch</p>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-10 sm:pb-12 border-b border-[#2A2A2A]">
+        <p className="section-number mb-4 sm:mb-6">05 // Get In Touch</p>
         <div className="flex flex-col gap-0">
           <h2 className="font-sans font-black text-white leading-none"
-            style={{ fontSize: 'clamp(2.8rem, 8vw, 6rem)' }}>
+            style={{ fontSize: 'clamp(2.2rem, 8vw, 6rem)' }}>
             LET&apos;S BUILD
           </h2>
           <h2 className="font-sans font-black text-[#CBFF00] leading-none"
-            style={{ fontSize: 'clamp(2.8rem, 8vw, 6rem)' }}>
+            style={{ fontSize: 'clamp(2.2rem, 8vw, 6rem)' }}>
             SOMETHING.
           </h2>
         </div>
-        <p className="text-[#888888] text-sm leading-relaxed mt-6 max-w-lg">
+        <p className="text-[#888888] text-sm leading-relaxed mt-4 sm:mt-6 max-w-lg">
           I&apos;m actively looking for remote frontend engineering roles. If you have a position or project that fits, I&apos;d love to hear from you.
         </p>
       </div>
 
       {/* Contact cards */}
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
         {/* Availability badge */}
-        <div className="flex items-center gap-3 border border-[#CBFF00]/30 bg-[#CBFF00]/5 px-5 py-3 mb-10 w-fit">
+        <div className="flex items-center gap-3 border border-[#CBFF00]/30 bg-[#CBFF00]/5 px-4 sm:px-5 py-3 mb-8 sm:mb-10 w-fit">
           <span className="relative flex h-2 w-2 flex-shrink-0">
             <span className="status-dot absolute inline-flex h-full w-full rounded-full bg-[#CBFF00] opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-[#CBFF00]" />
           </span>
-          <p className="font-mono text-xs tracking-widest uppercase text-[#CBFF00]">
+          <p className="font-mono text-[10px] sm:text-xs tracking-widest uppercase text-[#CBFF00]">
             Available — Open to New Opportunities
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-[#2A2A2A]">
           {/* Email card — spans 2 cols */}
-          <div className="md:col-span-2 flex flex-col gap-5 p-8 border-r border-[#2A2A2A]">
+          <div className="md:col-span-2 flex flex-col gap-4 sm:gap-5 p-5 sm:p-8 border-b border-[#2A2A2A] md:border-b-0 md:border-r md:border-[#2A2A2A]">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 border border-[#2A2A2A] flex items-center justify-center text-[#CBFF00]">
+              <div className="w-10 h-10 border border-[#2A2A2A] flex items-center justify-center text-[#CBFF00] flex-shrink-0">
                 <EnvelopeIcon className="w-5 h-5" />
               </div>
               <div>
@@ -96,15 +96,15 @@ export default function ContactSection() {
               </div>
             </div>
 
-            <div className="border border-[#2A2A2A] px-4 py-3 flex items-center justify-between gap-3 bg-[#0F0F0F]">
-              <span className="font-mono text-sm text-white truncate">
+            <div className="border border-[#2A2A2A] px-3 sm:px-4 py-3 flex items-center justify-between gap-2 sm:gap-3 bg-[#0F0F0F]">
+              <span className="font-mono text-xs sm:text-sm text-white truncate min-w-0">
                 {EMAIL}
               </span>
               <button
                 type="button"
                 onClick={handleCopy}
                 aria-label="Copy email address"
-                className={`flex items-center gap-2 px-3 py-1.5 font-mono text-xs font-bold tracking-wider uppercase transition-all duration-200 flex-shrink-0 border ${
+                className={`flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 font-mono text-xs font-bold tracking-wider uppercase transition-all duration-200 flex-shrink-0 border ${
                   copied
                     ? 'border-[#CBFF00] text-[#CBFF00] bg-[#CBFF00]/10'
                     : 'border-[#2A2A2A] text-[#888888] hover:border-[#CBFF00] hover:text-[#CBFF00]'
@@ -113,7 +113,8 @@ export default function ContactSection() {
                 {copied ? (
                   <>
                     <CheckIcon className="w-3.5 h-3.5" />
-                    Copied!
+                    <span className="hidden sm:inline">Copied!</span>
+                    <span className="sm:hidden">✓</span>
                   </>
                 ) : (
                   <>
@@ -139,7 +140,7 @@ export default function ContactSection() {
               href="https://github.com/Prince-406"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-6 group hover:bg-[#0F0F0F] transition-colors duration-200"
+              className="flex items-center gap-4 p-5 sm:p-6 group hover:bg-[#0F0F0F] transition-colors duration-200"
             >
               <div className="w-9 h-9 border border-[#2A2A2A] flex items-center justify-center text-[#888888] group-hover:text-[#CBFF00] group-hover:border-[#CBFF00] transition-colors">
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
@@ -157,7 +158,7 @@ export default function ContactSection() {
               href="https://www.linkedin.com/in/prince-macauley-7630632a9"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-6 group hover:bg-[#0F0F0F] transition-colors duration-200"
+              className="flex items-center gap-4 p-5 sm:p-6 group hover:bg-[#0F0F0F] transition-colors duration-200"
             >
               <div className="w-9 h-9 border border-[#2A2A2A] flex items-center justify-center text-[#888888] group-hover:text-[#CBFF00] group-hover:border-[#CBFF00] transition-colors">
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">

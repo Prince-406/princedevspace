@@ -37,7 +37,7 @@ export default function SkillsSection() {
   return (
     <section id="skills" ref={sectionRef} className="bg-[#0A0A0A] border-t border-[#2A2A2A]">
       {/* Section header */}
-      <div className="max-w-7xl mx-auto px-6 pt-16 pb-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-8 sm:pb-10">
         <p className="section-number mb-4">03 // Capabilities</p>
         <h2 className="font-sans font-black text-white leading-none"
           style={{ fontSize: 'clamp(2.5rem, 7vw, 5rem)' }}>
@@ -49,16 +49,22 @@ export default function SkillsSection() {
       </div>
 
       {/* Skills Grid */}
-      <div className="max-w-7xl mx-auto px-6 pb-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border border-[#2A2A2A]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-12 sm:pb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border border-[#2A2A2A]">
           {skillCategories.map((category, catIndex) => (
             <div
               key={category.id}
-              className={`skill-card opacity-0-init flex flex-col border-r border-[#2A2A2A] last:border-r-0 ${catIndex >= 2 ? 'border-t border-[#2A2A2A] sm:border-t-0 lg:border-t-0' : ''}`}
+              className={`skill-card opacity-0-init flex flex-col
+                ${catIndex % 2 === 0 ? 'sm:border-r sm:border-[#2A2A2A]' : ''}
+                lg:border-r lg:border-[#2A2A2A] lg:last:border-r-0
+                ${catIndex >= 1 ? 'border-t border-[#2A2A2A] sm:border-t-0' : ''}
+                ${catIndex >= 2 ? 'sm:border-t sm:border-[#2A2A2A]' : ''}
+                ${catIndex >= 2 && catIndex % 2 === 0 ? 'sm:border-r sm:border-[#2A2A2A]' : ''}
+              `}
               style={{ transitionDelay: `${catIndex * 80}ms` }}
             >
               {/* Category header */}
-              <div className="px-6 py-5 border-b border-[#2A2A2A]">
+              <div className="px-5 sm:px-6 py-4 sm:py-5 border-b border-[#2A2A2A]">
                 <h3 className="font-mono text-xs font-bold tracking-widest uppercase text-[#CBFF00]">
                   {category.label}
                 </h3>
@@ -67,7 +73,7 @@ export default function SkillsSection() {
               {/* Skills list */}
               <div className="flex flex-col divide-y divide-[#1A1A1A]">
                 {category.skills.map((skill) => (
-                  <div key={skill.name} className="flex items-center justify-between gap-2 px-6 py-4 hover:bg-[#111111] transition-colors duration-150">
+                  <div key={skill.name} className="flex items-center justify-between gap-2 px-5 sm:px-6 py-3 sm:py-4 hover:bg-[#111111] transition-colors duration-150">
                     <span className="text-sm text-white font-medium">{skill.name}</span>
                     <div className="flex items-center gap-1.5 flex-shrink-0">
                       <span className={`w-1.5 h-1.5 rounded-full ${levelDot[skill.level]}`} />
@@ -83,7 +89,7 @@ export default function SkillsSection() {
         </div>
 
         {/* Legend */}
-        <div className="flex items-center gap-6 mt-6 pt-6 border-t border-[#2A2A2A]">
+        <div className="flex flex-wrap items-center gap-4 sm:gap-6 mt-6 pt-6 border-t border-[#2A2A2A]">
           <span className="font-mono text-[10px] tracking-widest uppercase text-[#888888]">Legend:</span>
           {[
             { label: 'Advanced', color: 'bg-[#CBFF00]' },

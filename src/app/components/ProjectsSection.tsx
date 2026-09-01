@@ -18,7 +18,7 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="bg-[#0A0A0A] border-t border-[#2A2A2A]">
       {/* Section header */}
-      <div className="max-w-7xl mx-auto px-6 pt-16 pb-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-8 sm:pb-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
             <p className="section-number mb-4">02 // Selected Work</p>
@@ -32,12 +32,12 @@ export default function ProjectsSection() {
           </div>
 
           {/* Filter tabs */}
-          <div className="flex items-center gap-0 border border-[#2A2A2A] self-start">
+          <div className="flex flex-wrap items-center gap-0 border border-[#2A2A2A] self-start">
             {TABS.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-4 py-2 font-mono text-xs tracking-wider uppercase transition-all duration-200 border-r border-[#2A2A2A] last:border-r-0 ${
+                className={`px-3 sm:px-4 py-2 font-mono text-[10px] sm:text-xs tracking-wider uppercase transition-all duration-200 border-r border-[#2A2A2A] last:border-r-0 ${
                   activeTab === tab
                     ? 'bg-[#CBFF00] text-[#0A0A0A] font-bold'
                     : 'text-[#888888] hover:text-white hover:bg-[#1A1A1A]'
@@ -51,7 +51,7 @@ export default function ProjectsSection() {
       </div>
 
       {/* Project cards — stacked editorial layout */}
-      <div className="max-w-7xl mx-auto px-6 pb-16 flex flex-col gap-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-12 sm:pb-16 flex flex-col gap-0">
         {filtered.map((project, index) => (
           <div
             key={project.id}
@@ -62,9 +62,9 @@ export default function ProjectsSection() {
             onKeyDown={(e) => e.key === 'Enter' && setSelectedProject(project)}
             aria-label={`View details for ${project.title}`}
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 min-h-[320px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 min-h-[280px] md:min-h-[320px]">
               {/* Image side */}
-              <div className={`relative overflow-hidden min-h-[240px] md:min-h-[320px] ${index % 2 === 1 ? 'md:order-2' : ''}`}>
+              <div className={`relative overflow-hidden min-h-[200px] sm:min-h-[240px] md:min-h-[320px] ${index % 2 === 1 ? 'md:order-2' : ''}`}>
                 <AppImage
                   src={project.image}
                   alt={`${project.title} screenshot — ${project.tagline}`}
@@ -82,20 +82,20 @@ export default function ProjectsSection() {
               </div>
 
               {/* Content side */}
-              <div className={`flex flex-col justify-between p-8 border-l border-[#2A2A2A] ${index % 2 === 1 ? 'md:order-1 border-l-0 border-r border-[#2A2A2A]' : ''}`}>
+              <div className={`flex flex-col justify-between p-5 sm:p-8 border-t border-[#2A2A2A] md:border-t-0 md:border-l border-[#2A2A2A] ${index % 2 === 1 ? 'md:order-1 md:border-l-0 md:border-r border-[#2A2A2A]' : ''}`}>
                 <div>
                   <p className="font-mono text-xs tracking-widest uppercase text-[#888888] mb-3">
                     {project.category}
                   </p>
-                  <h3 className="font-sans font-black text-white text-2xl leading-tight mb-3 group-hover:text-[#CBFF00] transition-colors duration-300">
+                  <h3 className="font-sans font-black text-white text-xl sm:text-2xl leading-tight mb-3 group-hover:text-[#CBFF00] transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <p className="text-[#888888] text-sm leading-relaxed mb-6">
+                  <p className="text-[#888888] text-sm leading-relaxed mb-5 sm:mb-6">
                     {project.tagline}
                   </p>
 
                   {/* Tech badges */}
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-2 mb-5 sm:mb-6">
                     {project.tech.slice(0, 4).map((t) => (
                       <span
                         key={t}
@@ -113,10 +113,10 @@ export default function ProjectsSection() {
                 </div>
 
                 {/* CTA */}
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
                   <button
                     onClick={(e) => { e.stopPropagation(); setSelectedProject(project); }}
-                    className="flex items-center gap-2 px-5 py-2.5 font-mono text-xs font-bold tracking-widest uppercase bg-white text-[#0A0A0A] hover:bg-[#CBFF00] transition-colors duration-200"
+                    className="flex items-center gap-2 px-4 sm:px-5 py-2.5 font-mono text-xs font-bold tracking-widest uppercase bg-white text-[#0A0A0A] hover:bg-[#CBFF00] transition-colors duration-200"
                   >
                     View Project
                     <ArrowUpRightIcon className="w-3.5 h-3.5" />
