@@ -136,8 +136,8 @@ export default function HeroSection() {
               )}
             </div>
             <a
-              href="/Professional_cv-1788217879487.pdf"
-              download="Macauley_Prince_CV.pdf"
+              href="/Professional_cv.pdf"
+              download="/Professional_cv.pdf"
               className="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#888888] hover:text-[#CBFF00] transition-colors duration-200"
             >
               <ArrowDownTrayIcon className="w-3.5 h-3.5" />
