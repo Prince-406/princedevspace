@@ -74,20 +74,20 @@ export default function HeroSection() {
             {/* Big name headline */}
             <div className="mb-6 sm:mb-8">
               <h1
-                className="font-sans font-black leading-[0.9] tracking-tight foreground-text break-words"
-                style={{ fontSize: 'clamp(2.4rem, 8vw, 6rem)' }}
+                className="font-sans font-black leading-[0.9] tracking-tight foreground-text whitespace-nowrap"
+                style={{ fontSize: 'clamp(2rem, 5.5vw, 5.5rem)' }}
               >
                 MACAULEY
               </h1>
               <h1
-                className="font-sans font-black leading-[0.9] tracking-tight text-outline break-words"
-                style={{ fontSize: 'clamp(2.4rem, 8vw, 6rem)' }}
+                className="font-sans font-black leading-[0.9] tracking-tight text-outline whitespace-nowrap"
+                style={{ fontSize: 'clamp(2rem, 5.5vw, 5.5rem)' }}
               >
                 PRINCE
               </h1>
               <h1
-                className="font-sans font-black leading-[0.9] tracking-tight foreground-text break-words"
-                style={{ fontSize: 'clamp(2.4rem, 8vw, 6rem)' }}
+                className="font-sans font-black leading-[0.9] tracking-tight foreground-text whitespace-nowrap"
+                style={{ fontSize: 'clamp(2rem, 5.5vw, 5.5rem)' }}
               >
                 BUILDS.
               </h1>
