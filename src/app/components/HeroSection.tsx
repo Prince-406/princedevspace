@@ -66,28 +66,28 @@ export default function HeroSection() {
 
       <div className="pt-[100px] sm:pt-[108px] min-h-screen grid grid-cols-1 lg:grid-cols-2">
         {/* Left: Text content */}
-        <div className="flex flex-col justify-between px-4 sm:px-6 lg:px-12 py-8 sm:py-12 lg:py-16 lg:border-r theme-border">
+        <div className="flex flex-col justify-between px-4 sm:px-6 lg:px-12 py-8 sm:py-12 lg:py-16 lg:border-r theme-border overflow-hidden min-w-0">
           {/* Section label */}
-          <div>
+          <div className="min-w-0">
             <p className="section-number mb-6 sm:mb-8">01 // Identity</p>
 
             {/* Big name headline */}
             <div className="mb-6 sm:mb-8">
               <h1
-                className="font-sans font-black leading-[0.9] tracking-tight foreground-text"
-                style={{ fontSize: 'clamp(2.4rem, 9vw, 7rem)' }}
+                className="font-sans font-black leading-[0.9] tracking-tight foreground-text break-words"
+                style={{ fontSize: 'clamp(2.4rem, 8vw, 6rem)' }}
               >
                 MACAULEY
               </h1>
               <h1
-                className="font-sans font-black leading-[0.9] tracking-tight text-outline"
-                style={{ fontSize: 'clamp(2.4rem, 9vw, 7rem)' }}
+                className="font-sans font-black leading-[0.9] tracking-tight text-outline break-words"
+                style={{ fontSize: 'clamp(2.4rem, 8vw, 6rem)' }}
               >
                 PRINCE
               </h1>
               <h1
-                className="font-sans font-black leading-[0.9] tracking-tight foreground-text"
-                style={{ fontSize: 'clamp(2.4rem, 9vw, 7rem)' }}
+                className="font-sans font-black leading-[0.9] tracking-tight foreground-text break-words"
+                style={{ fontSize: 'clamp(2.4rem, 8vw, 6rem)' }}
               >
                 BUILDS.
               </h1>
