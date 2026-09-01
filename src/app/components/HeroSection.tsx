@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import AppImage from '@/components/ui/AppImage';
+
 import {
   ArrowDownTrayIcon,
   EnvelopeIcon,
@@ -153,15 +153,15 @@ export default function HeroSection() {
         </div>
 
         {/* Right: Profile image — full bleed */}
-        <div className="relative hidden lg:flex items-center justify-center min-h-[600px] overflow-hidden">
-          <AppImage
-            src="/assets/images/image_18b22e75-1788093940243.png"
-            alt="Macauley Prince, Frontend Developer, professional headshot in clean setting with neutral background"
-            fill
-            className="object-contain object-center grayscale brightness-75 hover:grayscale-0 hover:brightness-90 transition-all duration-700"
-            priority
-            sizes="50vw"
-          />
+        <div className="relative hidden lg:flex items-center justify-center overflow-hidden bg-[var(--muted)]">
+          <div className="relative w-full h-full flex items-center justify-center">
+            <img
+              src="/assets/images/image_18b22e75-1788093940243.png"
+              alt="Macauley Prince, Frontend Developer, professional headshot in clean setting with neutral background"
+              className="w-full h-full object-contain grayscale brightness-75 hover:grayscale-0 hover:brightness-90 transition-all duration-700"
+              style={{ maxHeight: '100%' }}
+            />
+          </div>
           <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
             <div className="flex flex-wrap gap-2">
               {['React', 'TypeScript', 'Next.js']?.map((t) => (
@@ -172,20 +172,19 @@ export default function HeroSection() {
         </div>
 
         {/* Mobile profile image */}
-        <div className="lg:hidden relative h-64 sm:h-80 md:h-96 mx-4 sm:mx-6 mb-6 sm:mb-8 overflow-hidden">
-          <AppImage
-            src="/assets/images/image_18b22e75-1788093940243.png"
-            alt="Macauley Prince, Frontend Developer, professional headshot"
-            fill
-            className="object-contain object-center grayscale brightness-75"
-            priority
-            sizes="100vw"
-          />
-          <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
-            <div className="flex flex-wrap gap-2">
-              {['React', 'TypeScript', 'Next.js']?.map((t) => (
-                <span key={t} className="lime-tag">{t}</span>
-              ))}
+        <div className="lg:hidden flex justify-center mx-4 sm:mx-6 mb-6 sm:mb-8">
+          <div className="relative w-full max-w-sm">
+            <img
+              src="/assets/images/image_18b22e75-1788093940243.png"
+              alt="Macauley Prince, Frontend Developer, professional headshot"
+              className="w-full h-auto object-contain grayscale brightness-75"
+            />
+            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
+              <div className="flex flex-wrap gap-2">
+                {['React', 'TypeScript', 'Next.js']?.map((t) => (
+                  <span key={t} className="lime-tag">{t}</span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
