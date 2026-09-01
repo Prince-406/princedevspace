@@ -3,21 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --background: #0A0A0A;
-  --foreground: #F0F0F0;
-  --primary: #CBFF00;
+  /* Light mode defaults */
+  --background: #F5F5F0;
+  --foreground: #0A0A0A;
+  --primary: #8BC400;
   --primary-foreground: #0A0A0A;
-  --secondary: #141414;
-  --secondary-foreground: #F0F0F0;
-  --accent: #CBFF00;
+  --secondary: #E8E8E2;
+  --secondary-foreground: #0A0A0A;
+  --accent: #8BC400;
   --accent-foreground: #0A0A0A;
-  --muted: #1A1A1A;
-  --muted-foreground: #888888;
-  --card: #111111;
-  --card-foreground: #F0F0F0;
-  --border: #2A2A2A;
-  --input: #1A1A1A;
-  --ring: #CBFF00;
+  --muted: #EBEBEB;
+  --muted-foreground: #555555;
+  --card: #FFFFFF;
+  --card-foreground: #0A0A0A;
+  --border: #D0D0C8;
+  --input: #E8E8E2;
+  --ring: #8BC400;
   --radius: 0px;
   --font-sans: var(--font-plus-jakarta-sans), sans-serif;
   --font-mono: var(--font-jetbrains-mono), monospace;
@@ -76,14 +77,14 @@
   }
 
   .text-gradient-primary {
-    background: linear-gradient(135deg, #CBFF00 0%, #AADD00 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, #AADD00 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-warm {
-    background: linear-gradient(135deg, #CBFF00 0%, #F0F0F0 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--foreground) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -163,7 +164,7 @@
     font-size: 0.65rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #888888;
+    color: var(--muted-foreground);
   }
 
   /* Brutalist divider */
@@ -175,8 +176,8 @@
 
   /* Lime tag */
   .lime-tag {
-    background: #CBFF00;
-    color: #0A0A0A;
+    background: var(--primary);
+    color: var(--primary-foreground);
     font-family: var(--font-mono);
     font-size: 0.7rem;
     font-weight: 700;
@@ -197,13 +198,96 @@
 
   /* Outlined text */
   .text-outline {
-    -webkit-text-stroke: 1px #F0F0F0;
+    -webkit-text-stroke: 1px var(--foreground);
     color: transparent;
   }
 
   .text-outline-lime {
-    -webkit-text-stroke: 1px #CBFF00;
+    -webkit-text-stroke: 1px var(--primary);
     color: transparent;
+  }
+
+  /* Theme-aware surface colors */
+  .surface-bg {
+    background-color: var(--background);
+  }
+
+  .surface-card {
+    background-color: var(--card);
+  }
+
+  .surface-muted {
+    background-color: var(--muted);
+  }
+
+  .text-primary-color {
+    color: var(--primary);
+  }
+
+  .text-muted-color {
+    color: var(--muted-foreground);
+  }
+
+  .border-theme {
+    border-color: var(--border);
+  }
+
+  /* Theme-aware semantic classes */
+  .hero-section {
+    background-color: var(--background);
+  }
+
+  .ticker-bar {
+    background-color: var(--background);
+    border-color: var(--border);
+  }
+
+  .theme-border {
+    border-color: var(--border);
+  }
+
+  .theme-divide > * + * {
+    border-color: var(--border);
+  }
+
+  .foreground-text {
+    color: var(--foreground);
+  }
+
+  .muted-text {
+    color: var(--muted-foreground);
+  }
+
+  .primary-text {
+    color: var(--primary);
+  }
+
+  .primary-bg {
+    background-color: var(--primary);
+  }
+
+  .hover-primary:hover {
+    color: var(--primary);
+  }
+
+  .hero-btn-primary {
+    background-color: var(--foreground);
+    color: var(--background);
+  }
+
+  .hero-btn-primary:hover {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  .hero-btn-outline {
+    border-color: var(--border);
+    color: var(--foreground);
+  }
+
+  .hero-btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
   }
 }
 
@@ -248,20 +332,17 @@
   to { opacity: 1; transform: scale(1); }
 }
 
+/* Animation utility classes */
 .animate-slide-up {
-  animation: slide-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.animate-slide-in-right {
-  animation: slide-in-right 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.animate-fade-in {
-  animation: fade-in 0.5s ease forwards;
+  animation: slide-up 0.5s ease forwards;
 }
 
 .animate-scale-in {
-  animation: scale-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: scale-in 0.2s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease forwards;
 }
 
 .opacity-0-init {

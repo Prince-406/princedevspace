@@ -29,55 +29,61 @@ export default function SkillsSection() {
   }, []);
 
   const levelDot: Record<string, string> = {
-    Advanced: 'bg-[#CBFF00]',
-    Intermediate: 'bg-white',
-    Learning: 'bg-[#888888]',
+    Advanced: 'var(--primary)',
+    Intermediate: 'var(--foreground)',
+    Learning: 'var(--muted-foreground)',
   };
 
   return (
-    <section id="skills" ref={sectionRef} className="bg-[#0A0A0A] border-t border-[#2A2A2A]">
+    <section id="skills" ref={sectionRef} className="border-t" style={{ backgroundColor: 'var(--background)', borderColor: 'var(--border)' }}>
       {/* Section header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-8 sm:pb-10">
         <p className="section-number mb-4">03 // Capabilities</p>
-        <h2 className="font-sans font-black text-white leading-none"
-          style={{ fontSize: 'clamp(2.5rem, 7vw, 5rem)' }}>
+        <h2 className="font-sans font-black leading-none"
+          style={{ fontSize: 'clamp(2.2rem, 7vw, 5rem)', color: 'var(--foreground)' }}>
           SKILLS.
         </h2>
-        <p className="font-mono text-xs tracking-widest uppercase text-[#888888] mt-3">
+        <p className="font-mono text-xs tracking-widest uppercase mt-3" style={{ color: 'var(--muted-foreground)' }}>
           The tools and technologies I use to build production-quality web applications.
         </p>
       </div>
 
       {/* Skills Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-12 sm:pb-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border border-[#2A2A2A]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border" style={{ borderColor: 'var(--border)' }}>
           {skillCategories.map((category, catIndex) => (
             <div
               key={category.id}
               className={`skill-card opacity-0-init flex flex-col
-                ${catIndex % 2 === 0 ? 'sm:border-r sm:border-[#2A2A2A]' : ''}
-                lg:border-r lg:border-[#2A2A2A] lg:last:border-r-0
-                ${catIndex >= 1 ? 'border-t border-[#2A2A2A] sm:border-t-0' : ''}
-                ${catIndex >= 2 ? 'sm:border-t sm:border-[#2A2A2A]' : ''}
-                ${catIndex >= 2 && catIndex % 2 === 0 ? 'sm:border-r sm:border-[#2A2A2A]' : ''}
+                ${catIndex % 2 === 0 ? 'sm:border-r' : ''}
+                lg:border-r lg:last:border-r-0
+                ${catIndex >= 1 ? 'border-t sm:border-t-0' : ''}
+                ${catIndex >= 2 ? 'sm:border-t' : ''}
+                ${catIndex >= 2 && catIndex % 2 === 0 ? 'sm:border-r' : ''}
               `}
-              style={{ transitionDelay: `${catIndex * 80}ms` }}
+              style={{ borderColor: 'var(--border)', transitionDelay: `${catIndex * 80}ms` }}
             >
               {/* Category header */}
-              <div className="px-5 sm:px-6 py-4 sm:py-5 border-b border-[#2A2A2A]">
-                <h3 className="font-mono text-xs font-bold tracking-widest uppercase text-[#CBFF00]">
+              <div className="px-5 sm:px-6 py-4 sm:py-5 border-b" style={{ borderColor: 'var(--border)' }}>
+                <h3 className="font-mono text-xs font-bold tracking-widest uppercase" style={{ color: 'var(--primary)' }}>
                   {category.label}
                 </h3>
               </div>
 
               {/* Skills list */}
-              <div className="flex flex-col divide-y divide-[#1A1A1A]">
+              <div className="flex flex-col divide-y" style={{ borderColor: 'var(--border)' }}>
                 {category.skills.map((skill) => (
-                  <div key={skill.name} className="flex items-center justify-between gap-2 px-5 sm:px-6 py-3 sm:py-4 hover:bg-[#111111] transition-colors duration-150">
-                    <span className="text-sm text-white font-medium">{skill.name}</span>
+                  <div
+                    key={skill.name}
+                    className="flex items-center justify-between gap-2 px-5 sm:px-6 py-3 sm:py-4 transition-colors duration-150"
+                    style={{ borderColor: 'var(--muted)' }}
+                    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--muted)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+                  >
+                    <span className="text-sm font-medium" style={{ color: 'var(--foreground)' }}>{skill.name}</span>
                     <div className="flex items-center gap-1.5 flex-shrink-0">
-                      <span className={`w-1.5 h-1.5 rounded-full ${levelDot[skill.level]}`} />
-                      <span className="font-mono text-[10px] tracking-wider uppercase text-[#888888]">
+                      <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: levelDot[skill.level] }} />
+                      <span className="font-mono text-[10px] tracking-wider uppercase" style={{ color: 'var(--muted-foreground)' }}>
                         {skill.level}
                       </span>
                     </div>
@@ -89,16 +95,16 @@ export default function SkillsSection() {
         </div>
 
         {/* Legend */}
-        <div className="flex flex-wrap items-center gap-4 sm:gap-6 mt-6 pt-6 border-t border-[#2A2A2A]">
-          <span className="font-mono text-[10px] tracking-widest uppercase text-[#888888]">Legend:</span>
+        <div className="flex flex-wrap items-center gap-4 sm:gap-6 mt-6 pt-6 border-t" style={{ borderColor: 'var(--border)' }}>
+          <span className="font-mono text-[10px] tracking-widest uppercase" style={{ color: 'var(--muted-foreground)' }}>Legend:</span>
           {[
-            { label: 'Advanced', color: 'bg-[#CBFF00]' },
-            { label: 'Intermediate', color: 'bg-white' },
-            { label: 'Learning', color: 'bg-[#888888]' },
+            { label: 'Advanced', colorKey: 'var(--primary)' },
+            { label: 'Intermediate', colorKey: 'var(--foreground)' },
+            { label: 'Learning', colorKey: 'var(--muted-foreground)' },
           ].map((item) => (
             <div key={item.label} className="flex items-center gap-2">
-              <span className={`w-1.5 h-1.5 rounded-full ${item.color}`} />
-              <span className="font-mono text-[10px] tracking-wider uppercase text-[#888888]">{item.label}</span>
+              <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: item.colorKey }} />
+              <span className="font-mono text-[10px] tracking-wider uppercase" style={{ color: 'var(--muted-foreground)' }}>{item.label}</span>
             </div>
           ))}
         </div>

@@ -83,54 +83,68 @@ export default function TimelineSection() {
   }, []);
 
   return (
-    <section id="journey" ref={sectionRef} className="bg-[#0A0A0A] border-t border-[#2A2A2A]">
+    <section id="journey" ref={sectionRef} className="border-t" style={{ backgroundColor: 'var(--background)', borderColor: 'var(--border)' }}>
       {/* Section header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-8 sm:pb-10">
         <p className="section-number mb-4">04 // Learning Journey</p>
-        <h2 className="font-sans font-black text-white leading-none"
-          style={{ fontSize: 'clamp(2.5rem, 7vw, 5rem)' }}>
+        <h2 className="font-sans font-black leading-none"
+          style={{ fontSize: 'clamp(2rem, 7vw, 5rem)', color: 'var(--foreground)' }}>
           HOW I GOT HERE.
         </h2>
-        <p className="font-mono text-xs tracking-widest uppercase text-[#888888] mt-3 max-w-xl">
+        <p className="font-mono text-xs tracking-widest uppercase mt-3 max-w-xl" style={{ color: 'var(--muted-foreground)' }}>
           A self-directed path from zero to shipping real products — built through deliberate practice and project execution.
         </p>
       </div>
 
       {/* Timeline */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-12 sm:pb-16">
-        <div className="flex flex-col gap-0 border border-[#2A2A2A]">
+        <div className="flex flex-col gap-0 border" style={{ borderColor: 'var(--border)' }}>
           {milestones?.map((milestone, index) => (
             <div
               key={milestone?.id}
-              className="timeline-item opacity-0-init grid grid-cols-1 md:grid-cols-[160px_1fr] lg:grid-cols-[200px_1fr] border-b border-[#2A2A2A] last:border-b-0 hover:bg-[#0F0F0F] transition-colors duration-200"
-              style={{ transitionDelay: `${index * 120}ms` }}
+              className="timeline-item opacity-0-init grid grid-cols-1 md:grid-cols-[140px_1fr] lg:grid-cols-[200px_1fr] border-b last:border-b-0 transition-colors duration-200"
+              style={{ borderColor: 'var(--border)', transitionDelay: `${index * 120}ms` }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--muted)')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
             >
               {/* Phase label column */}
-              <div className="flex flex-row md:flex-col justify-between md:justify-start px-4 sm:px-6 py-4 md:py-6 border-b border-[#2A2A2A] md:border-b-0 md:border-r md:border-[#2A2A2A] gap-3 md:gap-0">
+              <div
+                className="flex flex-row md:flex-col justify-between md:justify-start px-4 sm:px-6 py-4 md:py-6 border-b md:border-b-0 md:border-r gap-3 md:gap-0"
+                style={{ borderColor: 'var(--border)' }}
+              >
                 <div>
-                  <p className="font-mono text-xs font-bold tracking-widest uppercase text-[#CBFF00] mb-1 md:mb-2">
+                  <p className="font-mono text-xs font-bold tracking-widest uppercase mb-1 md:mb-2" style={{ color: 'var(--primary)' }}>
                     {milestone?.phase}
                   </p>
-                  <div className="text-[#888888]">
+                  <div style={{ color: 'var(--muted-foreground)' }}>
                     {milestone?.icon}
                   </div>
                 </div>
-                <div className="hidden md:block w-px h-8 bg-[#2A2A2A] mt-4" />
+                <div className="hidden md:block w-px h-8 mt-4" style={{ backgroundColor: 'var(--border)' }} />
               </div>
 
               {/* Content column */}
               <div className="px-4 sm:px-6 py-5 md:py-6">
-                <h3 className="font-sans font-bold text-white text-base sm:text-lg leading-tight mb-3">
+                <h3 className="font-sans font-bold text-base sm:text-lg leading-tight mb-3" style={{ color: 'var(--foreground)' }}>
                   {milestone?.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-[#888888] mb-4 sm:mb-5">
+                <p className="text-sm leading-relaxed mb-4 sm:mb-5" style={{ color: 'var(--muted-foreground)' }}>
                   {milestone?.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {milestone?.tags?.map((tag) => (
                     <span
                       key={tag}
-                      className="font-mono text-[10px] px-2.5 py-1 border border-[#2A2A2A] text-[#888888] tracking-wider uppercase hover:border-[#CBFF00] hover:text-[#CBFF00] transition-colors duration-200"
+                      className="font-mono text-[10px] px-2.5 py-1 border tracking-wider uppercase transition-colors duration-200"
+                      style={{ borderColor: 'var(--border)', color: 'var(--muted-foreground)' }}
+                      onMouseEnter={(e) => {
+                        (e.currentTarget as HTMLSpanElement).style.borderColor = 'var(--primary)';
+                        (e.currentTarget as HTMLSpanElement).style.color = 'var(--primary)';
+                      }}
+                      onMouseLeave={(e) => {
+                        (e.currentTarget as HTMLSpanElement).style.borderColor = 'var(--border)';
+                        (e.currentTarget as HTMLSpanElement).style.color = 'var(--muted-foreground)';
+                      }}
                     >
                       {tag}
                     </span>
