@@ -55,15 +55,10 @@ export default function ProjectsSection() {
       {/* Project cards */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-12 sm:pb-16 flex flex-col gap-0">
         {filtered.map((project, index) => (
-          <div
+          <article
             key={project.id}
-            className="group relative border border-b-0 last:border-b overflow-hidden cursor-pointer project-card"
+            className="group relative border border-b-0 last:border-b overflow-hidden project-card"
             style={{ borderColor: 'var(--border)' }}
-            onClick={() => setSelectedProject(project)}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => e.key === 'Enter' && setSelectedProject(project)}
-            aria-label={`View details for ${project.title}`}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 min-h-[260px] md:min-h-[320px]">
               {/* Image side */}
@@ -115,8 +110,9 @@ export default function ProjectsSection() {
                 {/* CTA */}
                 <div className="flex flex-wrap items-center gap-3">
                   <button
-                    onClick={(e) => { e.stopPropagation(); setSelectedProject(project); }}
+                    onClick={() => setSelectedProject(project)}
                     className="flex items-center gap-2 px-4 sm:px-5 py-2.5 font-mono text-xs font-bold tracking-widest uppercase transition-colors duration-200 hero-btn-primary"
+                    aria-label={`View details for ${project.title}`}
                   >
                     View Project
                     <ArrowUpRightIcon className="w-3.5 h-3.5" />
@@ -125,15 +121,15 @@ export default function ProjectsSection() {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
                     className="font-mono text-xs tracking-widest uppercase transition-colors duration-200 muted-text hover-primary"
+                    aria-label={`Visit ${project.title} live site`}
                   >
                     Live →
                   </a>
                 </div>
               </div>
             </div>
-          </div>
+          </article>
         ))}
 
         {filtered.length === 0 && (

@@ -37,10 +37,17 @@ export default function RootLayout({
   return (
     <html lang="en" className={`dark ${plusJakartaSans.variable} ${jetbrainsMono.variable}`}>
       <body className={plusJakartaSans.className}>
+        <a
+          href="#about"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:text-sm focus:font-mono focus:font-bold focus:uppercase focus:tracking-widest"
+          style={{ backgroundColor: 'var(--primary)', color: 'var(--primary-foreground)' }}
+        >
+          Skip to main content
+        </a>
         {children}
 
-        <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fprincedevs2031back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.20" />
-        <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2" /></body>
+        <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fprincedevs9556back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.20" />
+        <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.3" /></body>
     </html>
   );
 }

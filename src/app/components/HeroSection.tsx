@@ -160,6 +160,8 @@ export default function HeroSection() {
               alt="Macauley Prince, Frontend Developer, professional headshot in clean setting with neutral background"
               className="w-full h-full object-contain grayscale brightness-75 hover:grayscale-0 hover:brightness-90 transition-all duration-700"
               style={{ maxHeight: '100%' }}
+              fetchPriority="high"
+              loading="eager"
             />
           </div>
           <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
@@ -178,6 +180,8 @@ export default function HeroSection() {
               src="/assets/images/image_18b22e75-1788093940243.png"
               alt="Macauley Prince, Frontend Developer, professional headshot"
               className="w-full h-auto object-contain grayscale brightness-75"
+              fetchPriority="high"
+              loading="eager"
             />
             <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
               <div className="flex flex-wrap gap-2">

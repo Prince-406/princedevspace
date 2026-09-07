@@ -17,7 +17,7 @@ export const projects: Project[] = [
   'Dark/light mode with smooth transitions',
   'Fully responsive — works on mobile and desktop'],
 
-  image: "https://img.rocket.new/generatedImages/rocket_gen_img_14cd9bc98-1788218830840.png",
+  image: "https://img.rocket.new/generatedImages/rocket_gen_img_422fd0220-1788821392320.png",
   liveUrl: 'https://skypulse-sage.vercel.app',
   sourceUrl: 'https://github.com/Prince-406/skypulse.git',
   color: '#06B6D4',
@@ -39,7 +39,7 @@ export const projects: Project[] = [
   'Smooth page transitions with Framer Motion',
   'Fully responsive with mobile-first layouts'],
 
-  image: "https://img.rocket.new/generatedImages/rocket_gen_img_1d3e52823-1788218831472.png",
+  image: "https://img.rocket.new/generatedImages/rocket_gen_img_48d66524d-1788821392190.png",
   liveUrl: 'https://dine-ashen.vercel.app',
   sourceUrl: 'https://github.com/Prince-406/dine.git',
   color: '#F59E0B',

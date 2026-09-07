@@ -6,19 +6,19 @@
   /* Light mode defaults */
   --background: #F5F5F0;
   --foreground: #0A0A0A;
-  --primary: #8BC400;
-  --primary-foreground: #0A0A0A;
+  --primary: #5A8200;
+  --primary-foreground: #FFFFFF;
   --secondary: #E8E8E2;
   --secondary-foreground: #0A0A0A;
-  --accent: #8BC400;
-  --accent-foreground: #0A0A0A;
+  --accent: #5A8200;
+  --accent-foreground: #FFFFFF;
   --muted: #EBEBEB;
   --muted-foreground: #555555;
   --card: #FFFFFF;
   --card-foreground: #0A0A0A;
   --border: #D0D0C8;
   --input: #E8E8E2;
-  --ring: #8BC400;
+  --ring: #5A8200;
   --radius: 0px;
   --font-sans: var(--font-plus-jakarta-sans), sans-serif;
   --font-mono: var(--font-jetbrains-mono), monospace;
