@@ -5,21 +5,24 @@ import '../styles/tailwind.css';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
+  weight: ['400', '600', '700', '800'],
   variable: '--font-plus-jakarta-sans',
   display: 'swap',
+  preload: true,
 });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
+  weight: ['400', '500'],
   variable: '--font-jetbrains-mono',
   display: 'swap',
+  preload: false,
 });
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+  themeColor: '#0A0A0A',
 };
 
 export const metadata: Metadata = {
@@ -36,6 +39,19 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`dark ${plusJakartaSans.variable} ${jetbrainsMono.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://img.rocket.new" />
+        <link
+          rel="preload"
+          as="image"
+          href="/assets/images/image_18b22e75-1788093940243.png"
+          fetchPriority="high"
+        />
+      
+      <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fprincedevs9556back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.20" />
+      <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.3" /></head>
       <body className={plusJakartaSans.className}>
         <a
           href="#about"
@@ -45,9 +61,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         {children}
-
-        <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fprincedevs9556back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.20" />
-        <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.3" /></body>
+      </body>
     </html>
   );
 }

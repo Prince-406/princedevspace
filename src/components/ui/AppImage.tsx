@@ -22,6 +22,9 @@ interface AppImageProps {
     [key: string]: any;
 }
 
+// Known optimizable image hosts (configured in image-hosts.config.mjs)
+const OPTIMIZABLE_HOSTS = ['img.rocket.new'];
+
 const AppImage = memo(function AppImage({
     src,
     alt,
@@ -45,7 +48,9 @@ const AppImage = memo(function AppImage({
     const [hasError, setHasError] = useState(false);
 
     const isExternalUrl = useMemo(() => typeof imageSrc === 'string' && imageSrc.startsWith('http'), [imageSrc]);
-    const resolvedUnoptimized = unoptimized || isExternalUrl;
+    // Only skip optimization for truly unknown external hosts
+    const isKnownHost = useMemo(() => OPTIMIZABLE_HOSTS.some(h => imageSrc.includes(h)), [imageSrc]);
+    const resolvedUnoptimized = unoptimized || (isExternalUrl && !isKnownHost);
 
     const handleError = useCallback(() => {
         if (!hasError && imageSrc !== fallbackSrc) {
@@ -82,6 +87,7 @@ const AppImage = memo(function AppImage({
 
         if (priority) {
             baseProps.priority = true;
+            baseProps.fetchPriority = 'high';
         } else {
             baseProps.loading = loading;
         }
